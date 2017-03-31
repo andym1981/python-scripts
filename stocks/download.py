@@ -7,7 +7,7 @@ def make_url(ticker_symbol):
 
 output_path = "/Users/andym/scripts/stocks"
 
-def make_filename(ticker_symbol, directory="S&P"):
+def make_filename(ticker_symbol, directory="data"):
     return output_path + "/" + directory + "/" + ticker_symbol + ".csv"
 
 def pull_historical_data(ticker_symbol, directory="data"):
@@ -21,5 +21,8 @@ def pull_historical_data(ticker_symbol, directory="data"):
 
 #for i in ticker_symbol
 # This is a test to download data 
-pull_historical_data('AMZN', directory="data")
-pull_historical_data('GOOG', directory="data")
+for i in open('ticker.csv'):
+
+	pull_historical_data(i.strip())
+	
+	#pull_historical_data('GOOG')
